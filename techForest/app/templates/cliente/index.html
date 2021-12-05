@@ -13,7 +13,7 @@
                 </div>
                 <div class="avatar avatar-5xl avatar-profile shadow-sm img-thumbnail rounded-circle">
                     <div class="h-100 w-100 rounded-circle overflow-hidden position-relative"> <img
-                            src="{% static 'assets/img/team/3.jpg' %}" width="200" alt=""
+                            src="{{ cliente.imagen_perfil.url }}" width="200" alt=""
                             data-dz-thumbnail="data-dz-thumbnail" />
                     </div>
                 </div>
@@ -31,8 +31,8 @@
             <div class="card-body position-relative">
                 <div class="row">
                     <div class="col-lg-8">
-                        <h3 class="text-success">¡Bienvenid@ Lucero Herondale!</h3>
-                        <p class="lead">Plan Domestico</p>
+                        <h3 class="text-success">¡Bienvenid@ {{ cliente.nombres }}!</h3>
+                        <p class="lead">Plan {{ plan.tipo }}</p>
                     </div>
                 </div>
             </div>
