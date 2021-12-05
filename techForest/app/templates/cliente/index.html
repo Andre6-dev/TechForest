@@ -3,6 +3,34 @@
 {% load static %}
 <div class="row">
     <div class="col-12">
+        <div class="card mb-3 btn-reveal-trigger">
+            <div class="card-header position-relative min-vh-25 mb-8">
+                <div class="cover-image">
+                    <div class="bg-holder rounded-3 rounded-bottom-0"
+                        style="background-image:url('/static/assets/img/generic/4.jpg');">
+                    </div>
+                    <!--/.bg-holder-->
+
+                    <input class="d-none" id="upload-cover-image" type="file" />
+                    <label class="cover-image-file-input" for="upload-cover-image"><span
+                            class="fas fa-camera me-2"></span><span>Change cover photo</span></label>
+                </div>
+                <div class="avatar avatar-5xl avatar-profile shadow-sm img-thumbnail rounded-circle">
+                    <div class="h-100 w-100 rounded-circle overflow-hidden position-relative"> <img
+                            src="{% static 'assets/img/team/3.jpg' %}" width="200" alt="" data-dz-thumbnail="data-dz-thumbnail" />
+                        <input class="d-none" id="profile-image" type="file" />
+                        <label class="mb-0 overlay-icon d-flex flex-center" for="profile-image"><span
+                                class="bg-holder overlay overlay-0"></span><span
+                                class="z-index-1 text-white text-center fs--1"><span class="fas fa-camera"></span><span
+                                    class="d-block">Update</span></span></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
         <div class="card mb-3">
             <div class="bg-holder d-none d-lg-block bg-card"
                 style="background-image:url(assets/img/illustrations/corner-4.png);">
@@ -11,7 +39,7 @@
             <div class="card-body position-relative">
                 <div class="row">
                     <div class="col-lg-8">
-                        <h3 class="text-primary">Bienvenido *NombreUsuario!</h3>
+                        <h3 class="text-success">¡Bienvenid@ Lucero Herondale!</h3>
                         <p class="lead">Plan Domestico</p>
                     </div>
                 </div>
@@ -23,17 +51,8 @@
     <div class="col-12">
         <div class="card mb-3 btn-reveal-trigger">
             <div class="card-header d-flex flex-between-center pb-0">
-                <h6 class="mb-0">Weather</h6>
-                <div class="dropdown font-sans-serif btn-reveal-trigger">
-                    <button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal dropdown-caret-none"
-                        type="button" id="dropdown-weather-update" data-bs-toggle="dropdown" data-boundary="viewport"
-                        aria-haspopup="true" aria-expanded="false"><span
-                            class="fas fa-ellipsis-h fs--2"></span></button>
-                    <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="dropdown-weather-update">
-                        <a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                        <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                    </div>
-                </div>
+                <h6 class="mb-0">Clima</h6>
+
             </div>
             <div class="card-body pt-2">
                 <div class="row g-0 h-100 align-items-center">
@@ -41,9 +60,9 @@
                         <div class="d-flex align-items-center"><img class="me-3"
                                 src="{% static 'assets/img/icons/weather-icon.png' %}" alt="" height="60" />
                             <div>
-                                <h6 class="mb-2">New York City</h6>
+                                <h6 class="mb-2">Arequipa</h6>
                                 <div class="fs--2 fw-semi-bold">
-                                    <div class="text-warning">Sunny</div>Precipitation:
+                                    <div class="text-warning">Soleado</div>Precipitacion:
                                     50%
                                 </div>
                             </div>
