@@ -1,637 +1,225 @@
-<!DOCTYPE html>
-<html lang="en-US" dir="ltr">
+{% extends 'principal/plantilla.html' %}
+{% load static %}
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% block banner %}
+<div class="col-md-11 col-lg-8 col-xl-4 pb-7 pb-xl-9 text-center text-xl-start">
+    <h1 class="text-white fw-light">Somos</h1>
+    <h1 class="text-white fw-light"><span class="typed-text fw-bold"
+            data-typed-text='["Andre","Nikoll","Klebert","Jose", "Gabriel"]'></span><br /></h1>
+    <p class="lead text-white opacity-75">
+        Conoce un poco mas sobre nosotros</p>
+</div>
+{% endblock banner %}
 
-
-    <!-- ===============================================-->
-    <!--    Document Title-->
-    <!-- ===============================================-->
-    <title>TechForest | About us</title>
-
-
-    <!-- ===============================================-->
-    <!--    Favicons-->
-    <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicons/favicon-16x16.png">
-    <!-- Este es el icono de la pestana -->
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicons/favicon.ico">
-    <link rel="manifest" href="../assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileImage" content="../assets/img/favicons/mstile-150x150.png">
-    <meta name="theme-color" content="#ffffff">
-    <script src="../assets/js/config.js"></script>
-    <script src="../vendors/overlayscrollbars/OverlayScrollbars.min.js"></script>
+{% block content %}
 
 
-    <!-- ===============================================-->
-    <!--    Stylesheets-->
-    <!-- ===============================================-->
-    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <link href="../vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap"
-        rel="stylesheet">
-    <link href="../vendors/overlayscrollbars/OverlayScrollbars.min.css" rel="stylesheet">
-    <link href="../assets/css/theme-rtl.min.css" rel="stylesheet" id="style-rtl">
-    <link href="../assets/css/theme.min.css" rel="stylesheet" id="style-default">
-    <link href="../assets/css/user-rtl.min.css" rel="stylesheet" id="user-style-rtl">
-    <link href="../assets/css/user.min.css" rel="stylesheet" id="user-style-default">
-    <script>
-        var isRTL = JSON.parse(localStorage.getItem('isRTL'));
-        if (isRTL) {
-            var linkDefault = document.getElementById('style-default');
-            var userLinkDefault = document.getElementById('user-style-default');
-            linkDefault.setAttribute('disabled', true);
-            userLinkDefault.setAttribute('disabled', true);
-            document.querySelector('html').setAttribute('dir', 'rtl');
-        } else {
-            var linkRTL = document.getElementById('style-rtl');
-            var userLinkRTL = document.getElementById('user-style-rtl');
-            linkRTL.setAttribute('disabled', true);
-            userLinkRTL.setAttribute('disabled', true);
-        }
-    </script>
-</head>
+
+<!-- ============================================-->
+<!-- <section> begin ============================-->
+
+<div class="container">
+    <div class="row justify-content-center text-center mt-lg-5">
+        <div class="col-lg-8 col-xl-7 col-xxl-6">
+            <h1 class="fs-2 fs-sm-4 fs-md-5">TechForest cuida a tus plantas</h1>
+            <p class="lead">Somos un grupo de desarrolladores que buscan facilitar la administracion de riego en empresas de agricultura.</p>
+        </div>
+    </div>
+</div>
+<!-- <section> close ============================-->
+<!-- ============================================-->
 
 
-<body>
 
-    <!-- ===============================================-->
-    <!--    Main Content-->
-    <!-- ===============================================-->
-    <main class="main" id="top">
-        <nav class="navbar navbar-standard navbar-expand-lg fixed-top navbar-dark"
-            data-navbar-darken-on-scroll="data-navbar-darken-on-scroll">
-            <div class="container"><a class="navbar-brand" href="../index.html"><span
-                        class="text-white dark__text-white">TechForest</span></a>
-                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarStandard" aria-controls="navbarStandard" aria-expanded="false"
-                    aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse scrollbar" id="navbarStandard">
-                    <ul class="navbar-nav" data-top-nav-dropdowns="data-top-nav-dropdowns">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" id="dashboard">Soluciones</a>
-                            <div class="dropdown-menu dropdown-menu-card border-0 mt-0" aria-labelledby="dashboard">
-                                <div class="bg-white dark__bg-1000 rounded-3 py-2">
-                                    <a class="dropdown-item link-600 fw-medium" href="../index.html">Default</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" id="app">Planes</a>
-                            <div class="dropdown-menu dropdown-menu-card border-0 mt-0" aria-labelledby="dashboard">
-                                <div class="bg-white dark__bg-1000 rounded-3 py-2">
-                                    <a class="dropdown-item link-600 fw-medium" href="../index.html">Default</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="about_us.html" role="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="pages">Acerca
-                                de Nosotros</a>
-                            <div class="dropdown-menu dropdown-menu-card border-0 mt-0" aria-labelledby="dashboard">
-                                <div class="bg-white dark__bg-1000 rounded-3 py-2">
-                                    <a class="dropdown-item link-600 fw-medium" href="about_us.html">Acerca de
-                                        Nosotros</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" id="modules">Contacto</a>
-                            <div class="dropdown-menu dropdown-menu-card border-0 mt-0" aria-labelledby="dashboard">
-                                <div class="bg-white dark__bg-1000 rounded-3 py-2">
-                                    <a class="dropdown-item link-600 fw-medium" href="contacto.html">Contacto</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="../index.html"><span
-                                    class="d-none d-lg-inline-block" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                    title="Dashboard"><span class="fas fa-chart-pie"></span></span><span
-                                    class="d-lg-none">Dashboard</span></a></li>
-                        <li class="nav-item"><a class="nav-link" href="../app/social/feed.html"><span
-                                    class="d-none d-lg-inline-block" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                    title="Feed"><span class="fas fa-list-alt"></span></span><span
-                                    class="d-lg-none">Feed</span></a></li>
-                        <!-- Login principal -->
-                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownLogin"
-                                href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">Login</a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-card"
-                                aria-labelledby="navbarDropdownLogin">
-                                <div class="card shadow-none navbar-card-login">
-                                    <div class="card-body fs--1 p-4 fw-normal">
-                                        <div class="row text-start justify-content-between align-items-center mb-2">
-                                            <div class="col-auto">
-                                                <h5 class="mb-0">Log in</h5>
-                                            </div>
-                                            <div class="col-auto">
-                                                <p class="fs--1 text-600 mb-0">or <a
-                                                        href="../pages/authentication/simple/register.html">Create an
-                                                        account</a></p>
-                                            </div>
-                                        </div>
-                                        <form>
-                                            <div class="mb-3">
-                                                <input class="form-control" type="email" placeholder="Email address" />
-                                            </div>
-                                            <div class="mb-3">
-                                                <input class="form-control" type="password" placeholder="Password" />
-                                            </div>
-                                            <div class="row flex-between-center">
-                                                <div class="col-auto">
-                                                    <div class="form-check mb-0">
-                                                        <input class="form-check-input" type="checkbox"
-                                                            id="modal-checkbox" />
-                                                        <label class="form-check-label" for="modal-checkbox">Remember
-                                                            me</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-auto"><a class="fs--1"
-                                                        href="../pages/authentication/simple/forgot-password.html">Forgot
-                                                        Password?</a></div>
-                                            </div>
-                                            <div class="mb-3">
-                                                <button class="btn btn-primary d-block w-100 mt-3" type="submit"
-                                                    name="submit">Log in</button>
-                                            </div>
-                                        </form>
-                                        <div class="position-relative mt-4">
-                                            <hr class="bg-300" />
-                                            <div class="divider-content-center">or log in with</div>
-                                        </div>
-                                        <div class="row g-2 mt-2">
-                                            <div class="col-sm-6"><a
-                                                    class="btn btn-outline-google-plus btn-sm d-block w-100"
-                                                    href="#"><span class="fab fa-google-plus-g me-2"
-                                                        data-fa-transform="grow-8"></span> google</a></div>
-                                            <div class="col-sm-6"><a
-                                                    class="btn btn-outline-facebook btn-sm d-block w-100" href="#"><span
-                                                        class="fab fa-facebook-square me-2"
-                                                        data-fa-transform="grow-8"></span> facebook</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="#!" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Registro</a></li>
-                    </ul>
+
+<!-- ============================================-->
+<!-- <section> begin ============================-->
+<section class="bg-light text-center">
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="fs-2 fs-sm-4 fs-md-5">Informacion de los integrantes</h1>
+                <p class="lead">Carrera de Diseño y Desarrollo de Software - TECSUP - Cuarto Semestre</p>
+            </div>
+        </div>
+
+        <div class="row mt-6">
+
+            <div class="card overflow-hidden mx-auto mt-2" style="width: 15rem;">
+                <div class="card-img-top">
+                    <img style="width: 200px; height: 130px;" class="img-fluid" src="https://mfa.cachefly.net/mfa/images/uploads/2020/01/Robert_Downey_Juniorvegano-2.jpg" alt="Card image cap" />
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title mb-6">Mamani Choquehuanca, Jose Antonio</h5>
+                    <a class="btn btn-primary btn-sm" href="#!">Contacto</a>
                 </div>
             </div>
-        </nav>
-        <!-- Ventana emergente del registro -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-body p-4">
-                        <div class="row text-start justify-content-between align-items-center mb-2">
-                            <div class="col-auto">
-                                <h5 id="modalLabel">Register</h5>
-                            </div>
-                            <div class="col-auto">
-                                <p class="fs--1 text-600 mb-0">Have an account? <a
-                                        href="../pages/authentication/simple/login.html">Login</a></p>
-                            </div>
-                        </div>
-                        <form>
-                            <div class="mb-3">
-                                <input class="form-control" type="text" placeholder="Name" />
-                            </div>
-                            <div class="mb-3">
-                                <input class="form-control" type="email" placeholder="Email address" />
-                            </div>
-                            <div class="row gx-2">
-                                <div class="mb-3 col-sm-6">
-                                    <input class="form-control" type="password" placeholder="Password" />
-                                </div>
-                                <div class="mb-3 col-sm-6">
-                                    <input class="form-control" type="password" placeholder="Confirm Password" />
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="modal-register-checkbox" />
-                                <label class="form-label" for="modal-register-checkbox">I accept the <a href="#!">terms
-                                    </a>and <a href="#!">privacy policy</a></label>
-                            </div>
-                            <div class="mb-3">
-                                <button class="btn btn-primary d-block w-100 mt-3" type="submit"
-                                    name="submit">Register</button>
-                            </div>
-                        </form>
-                        <div class="position-relative mt-4">
-                            <hr class="bg-300" />
-                            <div class="divider-content-center">or register with</div>
-                        </div>
-                        <div class="row g-2 mt-2">
-                            <div class="col-sm-6"><a class="btn btn-outline-google-plus btn-sm d-block w-100"
-                                    href="#"><span class="fab fa-google-plus-g me-2" data-fa-transform="grow-8"></span>
-                                    google</a></div>
-                            <div class="col-sm-6"><a class="btn btn-outline-facebook btn-sm d-block w-100"
-                                    href="#"><span class="fab fa-facebook-square me-2"
-                                        data-fa-transform="grow-8"></span> facebook</a></div>
-                        </div>
+
+            <div class="card overflow-hidden mx-auto mt-2" style="width: 15rem;">
+                <div class="card-img-top">
+                    <img style="width: 200px; height: 130px;" class="img-fluid" src="https://fotografias.antena3.com/clipping/cmsimages01/2020/11/16/6277FC59-AC67-4817-9150-DC733AA7716D/98.jpg?crop=2817,1585,x0,y80&width=1900&height=1069&optimize=high&format=webply" alt="Card image cap" />
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Layme Arapa, Klebert Manuel</h5>
+                    <div class="card-body">
+                        <span class="card-text text-900 m-2 fs-3 bi-github"></span>
+                        <span class="card-text text-900 m-2 fs-3 bi-linkedin"></span>
+                        <span class="card-text text-900 m-2 fs-3 bi-twitter"></span>
+                    </div>
+                    <a class="btn btn-primary btn-sm" href="#!">Contacto</a>
+                </div>
+            </div>
+
+            <div class="card overflow-hidden mx-auto mt-2" style="width: 15rem;">
+                <div class="card-img-top">
+                    <img style="width: 200px; height: 130px;" class="img-fluid" src="https://www.latercera.com/resizer/ewy0iN-sGNpwTBNFxQN_qKZ5gQ8=/900x600/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/QYYNJXUQNFDCPFAEC5TR4W757A.jpg" alt="Card image cap" />
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Bonilla Hancco, Nikoll Belen</h5>
+                    <div class="card-body">
+                        <span class="card-text text-900 m-2 fs-3 bi-github"></span>
+                        <span class="card-text text-900 m-2 fs-3 bi-linkedin"></span>
+                        <span class="card-text text-900 m-2 fs-3 bi-twitter"></span>
+                    </div>
+                    <a class="btn btn-primary btn-sm" href="#!">Contacto</a>
+                </div>
+            </div>
+
+            <div class="card overflow-hidden mx-auto mt-2" style="width: 15rem;">
+                <div class="card-img-top">
+                    <img style="width: 200px; height: 130px;" class="img-fluid" src="https://static1.abc.es/media/summum/2021/09/20/chris_hemsworth_entreno-kUCE--1024x512@abc.jpg" alt="Card image cap" />
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Cordova Begazo, Gabriel Alejandro</h5>
+                    <div class="card-body">
+                        <span class="card-text text-900 m-2 fs-3 bi-github"></span>
+                        <span class="card-text text-900 m-2 fs-3 bi-linkedin"></span>
+                        <span class="card-text text-900 m-2 fs-3 bi-twitter"></span>
+                    </div>
+                    <a class="btn btn-primary btn-sm" href="#!">Contacto</a>
+                </div>
+            </div>
+
+            <div class="card overflow-hidden mx-auto mt-2" style="width: 15rem;">
+                <div class="card-img-top">
+                    <img style="width: 200px; height: 130px;" class="img-fluid" src="https://i0.wp.com/historia-biografia.com/wp-content/uploads/2018/06/Biografía-78.jpg?fit=820%2C547&ssl=1" alt="Card image cap" />
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Gallegos Quenaya, Andre Antonio</h5>
+                    <div class="card-body">
+                        <span class="card-text text-900 m-2 fs-3 bi-github"></span>
+                        <span class="card-text text-900 m-2 fs-3 bi-linkedin"></span>
+                        <span class="card-text text-900 m-2 fs-3 bi-twitter"></span>
+                    </div>
+                    <a class="btn btn-primary btn-sm" href="#!">Contacto</a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <br>
+        <br>
+        <br>
+        <div class="row mt-lg-5">
+            <div class="col">
+                <h1 class="fs-2 fs-sm-4 fs-md-5">Tecnologias Usadas</h1>
+                <p class="lead">Proyecto Integrador</p>
+            </div>
+        </div>
+
+        <div class="row mt-6">
+            <div class="col-lg-4">
+                <div class="card card-span h-100">
+                    <div class="card-span-img"><img class="img-fluid p-3" src="{% static 'assets/img/illustrations/androide.png' %}"
+                        alt="Card image cap" /></div>
+                    <div class="card-body pt-6 pb-4">
+                        <h5 class="mb-2">Android</h5>
+                        <p>Sistema operativo móvil basado en el núcleo Linux y otros software de código abierto.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mt-6 mt-lg-0">
+                <div class="card card-span h-100">
+                    <div class="card-span-img"><img class="img-fluid p-3" src="https://fullcoder.org/_images/logo-django.png"
+                        alt="Card image cap" /></div>
+                    <div class="card-body pt-6 pb-4">
+                        <h5 class="mb-2">Django</h5>
+                        <p>Framework de desarrollo web de código abierto, escrito en Python, que respeta el patrón de diseño conocido como modelo–vista–controlador.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mt-6 mt-lg-0">
+                <div class="card card-span h-100">
+                    <div class="card-span-img"><img class="img-fluid p-3" src="https://electronperdido.com/wp-content/uploads/2021/02/arduino-logo-1.png"
+                        alt="Card image cap" /></div>
+                    <div class="card-body pt-6 pb-4">
+                        <h5 class="mb-2">Arduino</h5>
+                        <p>Plataforma de creación de electrónica de código abierto, la cual está basada en hardware y software libre, flexible y fácil de utilizar para los creadores y desarrolladores.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mt-6 mt-lg-5">
+                <div class="card card-span h-100">
+                    <div class="card-span-img"><img class="img-fluid p-3" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/2048px-Kotlin_Icon.svg.png"
+                        alt="Card image cap" /></span></div>
+                    <div class="card-body pt-6 pb-4">
+                        <h5 class="mb-2">Kotlin</h5>
+                        <p>Lenguaje de programación de tipado estático que corre sobre la máquina virtual de Java y que también puede ser compilado a código fuente de JavaScript.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mt-6 mt-lg-5">
+                <div class="card card-span h-100">
+                    <div class="card-span-img"><img class="img-fluid p-3" src="https://cdn.picpng.com/logo/language-logo-python-44976.png"
+                        alt="Card image cap" /></div>
+                    <div class="card-body pt-6 pb-4">
+                        <h5 class="mb-2">Python</h5>
+                        <p>Lenguaje de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código.​</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mt-6 mt-lg-5">
+                <div class="card card-span h-100">
+                    <div class="card-span-img"><img class="img-fluid p-3" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/911px-ISO_C%2B%2B_Logo.svg.png"
+                        alt="Card image cap" /></div>
+                    <div class="card-body pt-6 pb-4">
+                        <h5 class="mb-2">C++</h5>
+                        <p>Lenguaje de programación que proviene de la extensión del lenguaje C para que pudiese manipular objetos.</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <!-- end of .container-->
 
+</section>
+<!-- <section> close ============================-->
 
-        <!-- ============================================-->
-        <!-- <section> begin ============================-->
-        <section class="py-0 overflow-hidden light" id="banner">
+<!-- ============================================-->
 
-            <div class="bg-holder overlay"
-                style="background-image:url(../assets/img/generic/bg-1.jpg);background-position: center bottom;">
-            </div>
-            <!--/.bg-holder-->
+<!-- <section> begin ============================-->
+<section class="light">
 
-            <div class="container">
-                <div class="row flex-center pt-8 pt-lg-10 pb-lg-9 pb-xl-0">
-                    <div class="col-md-11 col-lg-8 col-xl-4 pb-7 pb-xl-9 text-center text-xl-start">
-                        <h1 class="text-white fw-light">Somos</h1>
-                        <h1 class="text-white fw-light"><span class="typed-text fw-bold"
-                                data-typed-text='["Andre","Nikoll","Klebert","Jose", "Gabriel"]'></span><br /></h1>
-                        <p class="lead text-white opacity-75">
-                            Conoce un poco mas sobre nosotros</p>
-                        <a class="btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2" href="#!">
-                            Software Development<span class="fas fa-play ms-2"
-                                data-fa-transform="shrink-6 down-1"></span></a>
-                    </div>
-                </div>
-            </div>
-            <!-- end of .container-->
+    <div class="bg-holder overlay"
+        style="background-image:url(/static/assets/img/generic/bg-2.jpg);background-position: center top;">
+    </div>
+    <!--/.bg-holder-->
 
-        </section>
-        <!-- <section> close ============================-->
-        <!-- ============================================-->
-
-
-
-
-        <!-- ============================================-->
-        <!-- <section> begin ============================-->
-        <section class="py-3 bg-light shadow-sm">
-            <!-- Logos (Google, Disney, etc) -->
-            <div class="container">
-                <div class="row flex-center">
-                    <!-- Incluir las logos de las tecnologias que hicimos -->
-                    <div class="col-3 col-sm-auto my-1 my-sm-3 px-card"><img class="landing-cta-img" height="40"
-                            src="../assets/img/logos/b&amp;w/6.png" alt="" /></div>
-                    <div class="col-3 col-sm-auto my-1 my-sm-3 px-card"><img class="landing-cta-img" height="45"
-                            src="../assets/img/logos/b&amp;w/11.png" alt="" /></div>
-                    <div class="col-3 col-sm-auto my-1 my-sm-3 px-card"><img class="landing-cta-img" height="30"
-                            src="../assets/img/logos/b&amp;w/2.png" alt="" /></div>
-                    <div class="col-3 col-sm-auto my-1 my-sm-3 px-card"><img class="landing-cta-img" height="30"
-                            src="../assets/img/logos/b&amp;w/2.png" alt="" /></div>
-                </div>
-            </div>
-            <!-- end of .container-->
-
-        </section>
-        <!-- <section> close ============================-->
-        <!-- ============================================-->
-
-        <!-- ============================================-->
-        <!-- <section> begin ============================-->
-
-        <div class="container">
-            <div class="row justify-content-center text-center mt-lg-5">
-                <div class="col-lg-8 col-xl-7 col-xxl-6">
-                    <h1 class="fs-2 fs-sm-4 fs-md-5">TechForest cuida a tus plantas</h1>
-                    <p class="lead">Built on top of Bootstrap 5, super modular Falcon provides you gorgeous design &amp;
-                        streamlined UX for your WebApp.</p>
-                </div>
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <p class="fs-3 fs-sm-4 text-white">Unete a nuestra aplicacion TechForest para mas informacion
+                    acerca de como se ha creado este proyecto.</p>
+                <button class="btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2" type="button">Unete</button>
             </div>
         </div>
-        <!-- <section> close ============================-->
-        <!-- ============================================-->
+    </div>
+    <!-- end of .container-->
 
+</section>
+<!-- <section> close ============================-->
+<!-- ============================================-->
+{% endblock content %}
 
-
-
-        <!-- ============================================-->
-        <!-- <section> begin ============================-->
-        <section class="bg-light text-center">
-
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <h1 class="fs-2 fs-sm-4 fs-md-5">Informacion de los integrantes</h1>
-                        <p class="lead">Carrera de Diseño y Desarrollo de Software - TECSUP - Cuarto Semestre</p>
-                    </div>
-                </div>
-
-                <div class="row mt-6">
-
-                    <div class="card overflow-hidden mx-auto mt-2" style="width: 20rem;">
-                        <div class="card-img-top">
-                            <img class="img-fluid" src="../../assets/img/generic/1.jpg" alt="Card image cap" />
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                the card's content.</p>
-                            <div class="card-body">
-                                <span class="card-text text-900 m-2 fs-3 bi-github"></span>
-                                <span class="card-text text-900 m-2 fs-3 bi-linkedin"></span>
-                                <span class="card-text text-900 m-2 fs-3 bi-twitter"></span>
-                            </div>
-                            <a class="btn btn-primary btn-sm" href="#!">Contacto</a> 
-                        </div>
-                    </div>
-    
-                    <div class="card overflow-hidden mx-auto mt-2" style="width: 20rem;">
-                        <div class="card-img-top"><img class="img-fluid" src="../../assets/img/generic/1.jpg"
-                                alt="Card image cap" /></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                the card's content.</p>
-                            <div class="card-body">
-                                <span class="card-text text-900 m-2 fs-3 bi-github"></span>
-                                <span class="card-text text-900 m-2 fs-3 bi-linkedin"></span>
-                                <span class="card-text text-900 m-2 fs-3 bi-twitter"></span>
-                            </div>
-                            <a class="btn btn-primary btn-sm" href="#!">Contacto</a> 
-                        </div>
-                    </div>
-
-                    <div class="card overflow-hidden mx-auto mt-2" style="width: 20rem;">
-                        <div class="card-img-top"><img class="img-fluid" src="../../assets/img/generic/1.jpg"
-                                alt="Card image cap" /></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                the card's content.</p>
-                            <div class="card-body">
-                                <span class="card-text text-900 m-2 fs-3 bi-github"></span>
-                                <span class="card-text text-900 m-2 fs-3 bi-linkedin"></span>
-                                <span class="card-text text-900 m-2 fs-3 bi-twitter"></span>
-                            </div>
-                            <a class="btn btn-primary btn-sm" href="#!">Contacto</a> 
-                        </div>
-                    </div>
-
-                    <div class="card overflow-hidden mx-auto mt-2" style="width: 20rem;">
-                        <div class="card-img-top"><img class="img-fluid" src="../../assets/img/generic/1.jpg"
-                                alt="Card image cap" /></div>
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                the card's content.</p>
-                            <div class="card-body">
-                                <span class="card-text text-900 m-2 fs-3 bi-github"></span>
-                                <span class="card-text text-900 m-2 fs-3 bi-linkedin"></span>
-                                <span class="card-text text-900 m-2 fs-3 bi-twitter"></span>
-                            </div>
-                            <a class="btn btn-primary btn-sm" href="#!">Contacto</a> 
-                        </div>
-                    </div>
-
-                    <div class="card overflow-hidden mx-auto mt-4" style="width: 20rem;">
-                        <div class="card-img-top"><img class="img-fluid" src="../../assets/img/generic/1.jpg"
-                                alt="Card image cap" /></div>
-                        <div class="card-body">
-                            <h5 class="card-title">ULTIMO</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                the card's content.</p>
-                            <div class="card-body">
-                                <span class="card-text text-900 m-2 fs-3 bi-github"></span>
-                                <span class="card-text text-900 m-2 fs-3 bi-linkedin"></span>
-                                <span class="card-text text-900 m-2 fs-3 bi-twitter"></span>
-                            </div>
-                            <a class="btn btn-primary btn-sm" href="#!">Contacto</a> 
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="row mt-lg-5">
-                    <div class="col">
-                        <h1 class="fs-2 fs-sm-4 fs-md-5">Tecnologias Usadas</h1>
-                        <p class="lead">Proyecto Integrador</p>
-                    </div>
-                </div>
-
-                <div class="row mt-6">
-                    <div class="col-lg-4">
-                        <div class="card card-span h-100">
-                            <div class="card-span-img"><span class="fab fa-sass fs-4 text-info"></span></div>
-                            <div class="card-body pt-6 pb-4">
-                                <h5 class="mb-2">Android</h5>
-                                <p>Build your webapp with the world's most popular front-end component library along
-                                    with Falcon's 32 sets of carefully designed elements.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-6 mt-lg-0">
-                        <div class="card card-span h-100">
-                            <div class="card-span-img"><span class="fab fa-node-js fs-5 text-success"></span></div>
-                            <div class="card-body pt-6 pb-4">
-                                <h5 class="mb-2">Django</h5>
-                                <p>With your purchased copy of Falcon, you will get all the uncompressed & documented
-                                    SCSS and Javascript source code files.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-6 mt-lg-0">
-                        <div class="card card-span h-100">
-                            <div class="card-span-img"><span class="fab fa-gulp fs-6 text-danger"></span></div>
-                            <div class="card-body pt-6 pb-4">
-                                <h5 class="mb-2">Arduino</h5>
-                                <p>All the painful or time-consuming tasks in your development workflow such as
-                                    compiling the SCSS or transpiring the JS are automated.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-6 mt-lg-5">
-                        <div class="card card-span h-100">
-                            <div class="card-span-img"><span class="fab fa-gulp fs-6 text-danger"></span></div>
-                            <div class="card-body pt-6 pb-4">
-                                <h5 class="mb-2">Kotlin</h5>
-                                <p>All the painful or time-consuming tasks in your development workflow such as
-                                    compiling the SCSS or transpiring the JS are automated.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-6 mt-lg-5">
-                        <div class="card card-span h-100">
-                            <div class="card-span-img"><span class="fab fa-gulp fs-6 text-danger"></span></div>
-                            <div class="card-body pt-6 pb-4">
-                                <h5 class="mb-2">Python</h5>
-                                <p>All the painful or time-consuming tasks in your development workflow such as
-                                    compiling the SCSS or transpiring the JS are automated.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt-6 mt-lg-5">
-                        <div class="card card-span h-100">
-                            <div class="card-span-img"><span class="fab fa-gulp fs-6 text-danger"></span></div>
-                            <div class="card-body pt-6 pb-4">
-                                <h5 class="mb-2">C++</h5>
-                                <p>All the painful or time-consuming tasks in your development workflow such as
-                                    compiling the SCSS or transpiring the JS are automated.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end of .container-->
-
-        </section>
-        <!-- <section> close ============================-->
-
-        <!-- ============================================-->
-
-        <!-- <section> begin ============================-->
-        <section class="light">
-
-            <div class="bg-holder overlay"
-                style="background-image:url(../assets/img/generic/bg-2.jpg);background-position: center top;">
-            </div>
-            <!--/.bg-holder-->
-
-            <div class="container">
-                <div class="row justify-content-center text-center">
-                    <div class="col-lg-8">
-                        <p class="fs-3 fs-sm-4 text-white">Unete a nuestra aplicacion TechForest para mas informacion
-                            acerca de como se ha creado este proyecto.</p>
-                        <button class="btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2"
-                            type="button">Unete a nuestra comunidad</button>
-                    </div>
-                </div>
-            </div>
-            <!-- end of .container-->
-
-        </section>
-        <!-- <section> close ============================-->
-        <!-- ============================================-->
-
-
-
-
-        <!-- ============================================-->
-        <!-- <section> begin ============================-->
-        <section class="bg-dark pt-8 pb-4 light">
-
-            <div class="container">
-                <div class="position-absolute btn-back-to-top bg-dark"><a class="text-600" href="#banner"
-                        data-bs-offset-top="0" data-scroll-to="#banner"><span class="fas fa-chevron-up"
-                            data-fa-transform="rotate-45"></span></a></div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <h5 class="text-uppercase text-white opacity-85 mb-3">Nuestra Mision</h5>
-                        <p class="text-600">Falcon enables front end developers to build custom streamlined user
-                            interfaces in a matter of hours, while it gives backend developers all the UI elements they
-                            need to develop their web app.And it's rich design can be easily integrated with backends
-                            whether your app is based on ruby on rails, laravel, express or any other server side
-                            system.</p>
-                        <div class="icon-group mt-4"><a class="icon-item bg-white text-facebook" href="#!"><span
-                                    class="fab fa-facebook-f"></span></a><a class="icon-item bg-white text-twitter"
-                                href="#!"><span class="fab fa-twitter"></span></a><a
-                                class="icon-item bg-white text-google-plus" href="#!"><span
-                                    class="fab fa-google-plus-g"></span></a><a class="icon-item bg-white text-linkedin"
-                                href="#!"><span class="fab fa-linkedin-in"></span></a><a class="icon-item bg-white"
-                                href="#!"><span class="fab fa-medium-m"></span></a></div>
-                    </div>
-                    <div class="col ps-lg-8 ps-xl-10">
-                        <div class="row mt-5 mt-lg-0">
-                            <div class="col-6 col-md-3">
-                                <h5 class="text-uppercase text-white opacity-85 mb-3">Company</h5>
-                                <ul class="list-unstyled">
-                                    <li class="mb-1"><a class="link-600" href="#!">About</a></li>
-                                    <li class="mb-1"><a class="link-600" href="#!">Contact</a></li>
-                                    <li class="mb-1"><a class="link-600" href="#!">Careers</a></li>
-                                    <li class="mb-1"><a class="link-600" href="#!">Blog</a></li>
-                                    <li><a class="link-600" href="#!">Imprint</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-6 col-md-5">
-                                <h5 class="text-uppercase text-white opacity-85 mb-3">Product</h5>
-                                <ul class="list-unstyled">
-                                    <li class="mb-1"><a class="link-600" href="#!">Features</a></li>
-                                    <li class="mb-1"><a class="link-600" href="#!">Roadmap</a></li>
-                                    <li class="mb-1"><a class="link-600" href="#!">Changelog</a></li>
-                                    <li class="mb-1"><a class="link-600" href="#!">Pricing</a></li>
-                                    <li class="mb-1"><a class="link-600" href="#!">Docs</a></li>
-                                </ul>
-                            </div>
-                            <div class="col mt-4 mt-md-0">
-                                <h5 class="text-uppercase text-white opacity-85 mb-3">From the Blog</h5>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <h5 class="fs-0 mb-0"><a class="link-600" href="#!"> Interactive graphs and
-                                                charts</a></h5>
-                                        <p class="text-600 opacity-50">Jan 15 &bull; 8min read </p>
-                                    </li>
-                                    <li>
-                                        <h5 class="fs-0 mb-0"><a class="link-600" href="#!"> Lifetime free updates</a>
-                                        </h5>
-                                        <p class="text-600 opacity-50">Jan 5 &bull; 3min read &starf;</p>
-                                    </li>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end of .container-->
-
-        </section>
-        <!-- <section> close ============================-->
-        <!-- ============================================-->
-
-        <!-- ============================================-->
-        <!-- <section> begin ============================-->
-        <section class="py-0 bg-dark light">
-
-            <div>
-                <hr class="my-0 text-600 opacity-25" />
-                <div class="container py-3">
-                    <div class="row justify-content-between fs--1">
-                        <div class="col-12 col-sm-auto text-center">
-                            <p class="mb-0 text-600 opacity-85">TechForest based on Falcon Template <span
-                                    class="d-none d-sm-inline-block">| </span><br class="d-sm-none" /> 2021 &copy;
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end of .container-->
-
-        </section>
-        <!-- <section> close ============================-->
-        <!-- ============================================-->
-
-
-
-        <!-- ===============================================-->
-        <!--    JavaScripts-->
-        <!-- ===============================================-->
-        <script src="../vendors/popper/popper.min.js"></script>
-        <script src="../vendors/bootstrap/bootstrap.min.js"></script>
-        <script src="../vendors/anchorjs/anchor.min.js"></script>
-        <script src="../vendors/is/is.min.js"></script>
-        <script src="../vendors/swiper/swiper-bundle.min.js"> </script>
-        <script src="../vendors/typed.js/typed.js"></script>
-        <script src="../vendors/fontawesome/all.min.js"></script>
-        <script src="../vendors/lodash/lodash.min.js"></script>
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-        <script src="../vendors/list.js/list.min.js"></script>
-        <script src="../assets/js/theme.js"></script>
-
-</body>
-
-</html>

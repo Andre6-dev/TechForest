@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+# Pagina principal
 def index(request):
     context = {}
     return render(request, 'principal/index.html', context)
@@ -13,6 +13,15 @@ def soluciones(request):
     context = {}
     return render(request, 'principal/soluciones.html', context)
 
+def nosotros(request):
+    context = {}
+    return render(request, 'principal/about_us.html', context)
+
+def contacto(request):
+    context = {}
+    return render(request, 'principal/contacto.html', context)
+
+# Dashboard Cliente
 def cliente(request):
     context = {}
     return render(request, 'cliente/index.html', context)
@@ -32,3 +41,5 @@ def solucionCliente(request):
 def contactoCliente(request):
     context = {}
     return render(request, 'cliente/contacto.html', context)
+
+# Dashboard Administrador
