@@ -14,11 +14,17 @@ urlpatterns = [
     path('contacto', views.contacto, name='contacto'),
 
     # Dashboard Cliente
-    path('cliente', views.cliente, name='cliente'),
-    path('cliente/perfil', views.perfilCliente, name='perfilCliente'),
-    path('cliente/plan', views.planCliente, name='planCliente'),
-    path('cliente/solucion', views.solucionCliente, name='solucionCliente'),
-    path('cliente/contacto', views.contactoCliente, name='contactoCliente')
+    path('cliente/<int:cliente_id>', views.cliente, name='cliente'),
+    path('cliente/<int:cliente_id>/perfil', views.perfilCliente, name='perfilCliente'),
+    path('cliente/<int:cliente_id>/plan', views.planCliente, name='planCliente'),
+    path('cliente/<int:cliente_id>/solucion', views.solucionCliente, name='solucionCliente'),
+    path('cliente/<int:cliente_id>/reportar', views.reportarCliente, name='reportarCliente'),
+    path('cliente/<int:cliente_id>/reportes', views.reportesCliente, name='reportesCliente'),
 
     # Dashboard Administrador
+    path('administrador/dashboard', views.admin_dashboard, name='dashboard'),
+    path('administrador/administradores', views.administradores, name='administradores'),
+    path('administrador/ayuda', views.ayuda, name='ayuda'),
+    path('administrador/dispositivos', views.dispositivos, name='ayuda'),
+    path('administrador/usuarios', views.usuarios, name='usuarios')
 ]

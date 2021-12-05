@@ -52,7 +52,10 @@
                 <label class="form-label" for="basic-form-textarea">Descripcion</label>
                 <textarea class="form-control" id="basic-form-textarea" rows="3" placeholder="Descripcion"></textarea>
             </div>
-            <button class="btn btn-primary" type="submit">Enviar</button>
+            <div class="text-center">
+                <button class="btn btn-success text-center" type="submit">Enviar</button>
+            </div>
+
         </form>
     </div>
 </div>
@@ -63,18 +66,13 @@
             style="background-image:url(/static/assets/img/illustrations/corner-4.png);">
         </div>
         <!--/.bg-holder-->
-
-        <div class="card-body position-relative">
-            <div class="row">
-                <div class="text-center">
-                    <h3>Ubicacion(Google Maps)</h3>
-                </div>
-            </div>
-        </div>
     </div>
     <div class="card mb-3">
         <div class="card-header">
             <div class="row flex-between-end">
+                <div class="text-center">
+                    <h3>Ubicacion</h3>
+                </div>
                 <div class="col-auto col-lg align-self-center">
                     <h5 class="mb-0" data-anchor="data-anchor">TechForest Oficina</h5>
                 </div>
@@ -85,23 +83,13 @@
                 <div class="tab-pane preview-tab-pane active" role="tabpanel"
                     aria-labelledby="tab-dom-afdcb052-4ef1-4bf7-9170-395f5b61a370"
                     id="dom-afdcb052-4ef1-4bf7-9170-395f5b61a370">
-                    <div class="googlemap min-vh-50" data-latlng="48.8583701,2.2922873,17" data-scrollwheel="false"
-                        data-icon="{% static 'assets/img/icons/map-marker.png' %}" data-zoom="17" data-theme="Default">
+                    <div class="googlemap min-vh-50" data-latlng="-16.4291486,-71.5197713,20" data-scrollwheel="false"
+                        data-icon="{% static 'assets/img/icons/map-marker.png' %}" data-zoom="17" data-theme="Hopper">
                         <div class="marker-content">
                             <h5>Tecsup</h5>
                             <p class="mb-0">José Luis Bustamante y Rivero 04009</p>
                         </div>
                     </div>
-                </div>
-                <div class="tab-pane code-tab-pane" role="tabpanel"
-                    aria-labelledby="tab-dom-b4f3ae39-0f12-4edb-8386-d5e0e661df4d"
-                    id="dom-b4f3ae39-0f12-4edb-8386-d5e0e661df4d">
-                    <pre class="scrollbar rounded-1" style="max-height:420px"><code class="language-html">&lt;div class=&quot;googlemap min-vh-50&quot; data-latlng=&quot;48.8583701,2.2922873,17&quot; data-scrollwheel=&quot;false&quot; data-icon=&quot;../../assets/img/icons/map-marker.png&quot; data-zoom=&quot;17&quot; data-theme=&quot;Default&quot;&gt;
-      &lt;div class=&quot;marker-content&quot;&gt;
-        &lt;h5&gt;Eiffel Tower&lt;/h5&gt;
-        &lt;p class=&quot;mb-0&quot;&gt;Gustave Eiffel's iconic, wrought-iron 1889 tower,&lt;br /&gt; with steps and elevators to observation decks.&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;</code></pre>
                 </div>
             </div>
         </div>
@@ -124,7 +112,8 @@
             <div class="col-lg-8">
                 <p class="fs-3 fs-sm-4 text-white">Unete a nuestra aplicacion TechForest para mas informacion
                     acerca de como se ha creado este proyecto.</p>
-                <button class="btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2" type="button">Unete</button>
+                <a class="btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2" href="/contacto"
+                    type="button">Unete</a>
             </div>
         </div>
     </div>
