@@ -1,5 +1,6 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, HttpResponseRedirect
 from api.models import *
+from .forms import *
 
 # Pagina principal
 def index(request):
@@ -30,7 +31,12 @@ def cliente(request, cliente_id):
 
 def perfilCliente(request, cliente_id):
     cliente = get_object_or_404(Usuarios, pk=cliente_id)
-    return render(request, 'cliente/perfil.html', {'cliente': cliente})
+    form = UsuarioForm(request.POST or None, instance = cliente)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect("/cliente/"+str(cliente_id)+"/perfil")
+    
+    return render(request, 'cliente/perfil.html', {'cliente': cliente,'form':form})
 
 def planCliente(request, cliente_id):
     cliente = get_object_or_404(Usuarios, pk=cliente_id)
@@ -40,13 +46,25 @@ def planCliente(request, cliente_id):
 
 def solucionCliente(request, cliente_id):
     cliente = get_object_or_404(Usuarios, pk=cliente_id)
-    diapositivo = Diapositivos.objects.get(usuarios_id=cliente_id)
+    diapositivo = Dispositivos.objects.get(usuarios_id=cliente_id)
     opciones = Opciones.objects.get(diapositivos_id=diapositivo.id)
     return render(request, 'cliente/solucion.html', {'cliente': cliente,'opciones': opciones})
 
+def dispositivoCliente(request, cliente_id):
+    cliente = get_object_or_404(Usuarios, pk=cliente_id)
+    dispositivo = Dispositivos.objects.get(usuarios_id=cliente_id)
+    return render(request, 'cliente/dispositivo.html', {'cliente': cliente,'dispositivo': dispositivo})
+
 def reportarCliente(request, cliente_id):
     cliente = get_object_or_404(Usuarios, pk=cliente_id)
-    return render(request, 'cliente/reportar.html', {'cliente': cliente})
+    form = ErrorForm(request.POST or None)
+    if form.is_valid():
+        error = form.save(commit=False)
+        error.usuarios = cliente
+        form.save()
+        return HttpResponseRedirect("/cliente/"+str(cliente_id)+"/reportar")
+    
+    return render(request, 'cliente/reportar.html', {'cliente': cliente,'form':form})
 
 def reportesCliente(request, cliente_id):
     cliente = get_object_or_404(Usuarios, pk=cliente_id)

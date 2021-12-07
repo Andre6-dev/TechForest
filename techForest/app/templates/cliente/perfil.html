@@ -1,6 +1,7 @@
 {% extends 'cliente/plantilla.html' %}
 {% block content %}
 {% load static %}
+{% load widget_tweaks %} 
 <div class="row">
     <div class="col-12">
         <div class="card mb-3 btn-reveal-trigger">
@@ -32,22 +33,27 @@
                 <h5 class="mb-0">Configuración de perfil</h5>
             </div>
             <div class="card-body bg-light">
-                <form class="row g-3">
+                <form class="row g-3" method="POST" action="/cliente/{{ cliente.id }}/perfil">
+                    {% csrf_token %} 
                     <div class="col-lg-6">
                         <label class="form-label" for="first-name">Nombres</label>
-                        <input class="form-control" id="first-name" type="text" value="{{ cliente.nombres }}" />
+                        {% render_field form.nombres class="form-control" value="{{ cliente.nombres }}" type="text" %}
                     </div>
                     <div class="col-lg-6">
                         <label class="form-label" for="last-name">Apellidos</label>
-                        <input class="form-control" id="last-name" type="text" value="{{ cliente.apellidos }}" />
+                        {% render_field form.apellidos class="form-control" value="{{ cliente.apellidos }}" type="text" %}
                     </div>
                     <div class="col-lg-6">
                         <label class="form-label" for="email1">Correo</label>
-                        <input class="form-control" id="email1" type="text" value="{{ cliente.correo }}" />
+                        {% render_field form.correo class="form-control" value="{{ cliente.correo }}" type="email" %}
                     </div>
                     <div class="col-lg-6">
                         <label class="form-label" for="contra">Contraseña</label>
-                        <input class="form-control" id="contra" type="text" value="{{ cliente.contraseña }}" />
+                        {% render_field form.contraseña class="form-control" value="{{ cliente.contraseña }}" type="text" %}
+                    </div>
+                    <div class="col-lg-6">
+                        <label class="form-label" for="contra">Imagen</label>
+                        {{ form.imagen_perfil }}
                     </div>
                     <div class="col-12 d-flex justify-content-end">
                         <button class="btn btn-success" type="submit">Update </button>
