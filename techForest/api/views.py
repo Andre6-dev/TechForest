@@ -20,13 +20,13 @@ def usuario_list(request):
     List all code serie, or create a new serie.
     """
     if request.method == 'GET':
-        usuario = Usuarios.objects.all()
-        serializer = UsuariosSerializer(usuario, many=True)
+        usuario = Profile.objects.all()
+        serializer = ProfileSerializer(usuario, many=True)
         return JSONResponse(serializer.data)
 
     elif request.method == 'POST':
         data = JSONParser().parse(request)
-        serializer = UsuariosSerializer(data=data)
+        serializer = ProfileSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
             return JSONResponse(serializer.data, status=201)
@@ -38,17 +38,17 @@ def usuario_detail(request, pk):
     Retrieve, update or delete a serie.
     """
     try:
-        usuario = Usuarios.objects.get(pk=pk)
-    except Usuarios.DoesNotExist:
+        usuario = Profile.objects.get(user_id=pk)
+    except Profile.DoesNotExist:
         return HttpResponse(status=404)
 
     if request.method == 'GET':
-        serializer = UsuariosSerializer(usuario)
+        serializer = ProfileSerializer(usuario)
         return JSONResponse(serializer.data)
 
     elif request.method == 'PUT':
         data = JSONParser().parse(request)
-        serializer = UsuariosSerializer(usuario, data=data)
+        serializer = ProfileSerializer(usuario, data=data)
         if serializer.is_valid():
             serializer.save()
             return JSONResponse(serializer.data)
@@ -335,51 +335,7 @@ def opciones_list(request):
             serializer.save()
             return JSONResponse(serializer.data, status=201)
         return JSONResponse(serializer.errors, status=400)
-        
-@csrf_exempt
-def admin_detail(request, pk):
-    """
-    Retrieve, update or delete a serie.
-    """
-    try:
-        administradores = Administradores.objects.get(pk=pk)
-    except Administradores.DoesNotExist:
-        return HttpResponse(status=404)
-
-    if request.method == 'GET':
-        serializer = AdministradoresSerializer(administradores)
-        return JSONResponse(serializer.data)
-
-    elif request.method == 'PUT':
-        data = JSONParser().parse(request)
-        serializer = AdministradoresSerializer(administradores, data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return JSONResponse(serializer.data)
-        return JSONResponse(serializer.errors, status=400)
-
-    elif request.method == 'DELETE':
-        administradores.delete()
-        return HttpResponse(status=204)
-
-@csrf_exempt
-def admin_list(request):
-    """
-    List all code serie, or create a new serie.
-    """
-    if request.method == 'GET':
-        administradores = Administradores.objects.all()
-        serializer = AdministradoresSerializer(administradores, many=True)
-        return JSONResponse(serializer.data)
-
-    elif request.method == 'POST':
-        data = JSONParser().parse(request)
-        serializer = AdministradoresSerializer(data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return JSONResponse(serializer.data, status=201)
-        return JSONResponse(serializer.errors, status=400)
-
+ 
 # Jose
 
 @csrf_exempt
@@ -407,12 +363,12 @@ def valvula_dispositivo_detail(request, pk):
 @csrf_exempt
 def usuario_correo_detail(request, pk):
     try:
-        usuario = Usuarios.objects.get(correo=pk)
-    except Usuarios.DoesNotExist:
+        usuario = Profile.objects.get(correo=pk)
+    except Profile.DoesNotExist:
         return HttpResponse(status=404)
 
     if request.method == 'GET':
-        serializer = UsuariosSerializer(usuario)
+        serializer = ProfileSerializer(usuario)
         return JSONResponse(serializer.data)
 
 @csrf_exempt

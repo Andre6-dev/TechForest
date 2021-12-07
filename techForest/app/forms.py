@@ -7,5 +7,10 @@ class ErrorForm(forms.ModelForm):
 
 class UsuarioForm(forms.ModelForm):  
     class Meta:  
-        model = Usuarios  
-        fields = '__all__'  
+        model = Profile  
+        fields = ["nombres","apellidos","correo","contraseña"]  
+
+class LoginCliente(forms.ModelForm):
+    class Meta: 
+        model = Profile  
+        fields = ["correo","contraseña"]

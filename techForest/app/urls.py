@@ -12,6 +12,7 @@ urlpatterns = [
     path('soluciones', views.soluciones, name='soluciones'),
     path('nosotros', views.nosotros, name='nosotros'),
     path('contacto', views.contacto, name='contacto'),
+    path('login', views.login, name='login'),
 
     # Dashboard Cliente
     path('cliente/<int:cliente_id>', views.cliente, name='cliente'),

@@ -1,4 +1,5 @@
 {% load static %}
+{% load widget_tweaks %} 
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
 
@@ -110,12 +111,13 @@
                                 <h3 id="modalLabel">Ingreso</h3>
                             </div>
                         </div>
-                        <form>
+                        <form method="POST" action="/login">
+                            {% csrf_token %}
                             <div class="mb-3">
-                                <input class="form-control" type="text" placeholder="Nombre" />
+                                {% render_field form.correo class="form-control" placeholder="Nombre" type="email" %}
                             </div>
                             <div class="mb-3">
-                                <input class="form-control" type="password" placeholder="Contraseña" />
+                                {% render_field form.contraseña class="form-control" placeholder="Contraseña" type="password" %}
                             </div>
                             <div class="mb-3">
                                 <button class="btn btn-primary d-block w-100 mt-3" type="submit"

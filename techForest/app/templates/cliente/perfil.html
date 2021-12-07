@@ -33,7 +33,7 @@
                 <h5 class="mb-0">Configuración de perfil</h5>
             </div>
             <div class="card-body bg-light">
-                <form class="row g-3" method="POST" action="/cliente/{{ cliente.id }}/perfil">
+                <form class="row g-3" method="POST" action="/cliente/{{ cliente.user_id }}/perfil">
                     {% csrf_token %} 
                     <div class="col-lg-6">
                         <label class="form-label" for="first-name">Nombres</label>
@@ -50,10 +50,6 @@
                     <div class="col-lg-6">
                         <label class="form-label" for="contra">Contraseña</label>
                         {% render_field form.contraseña class="form-control" value="{{ cliente.contraseña }}" type="text" %}
-                    </div>
-                    <div class="col-lg-6">
-                        <label class="form-label" for="contra">Imagen</label>
-                        {{ form.imagen_perfil }}
                     </div>
                     <div class="col-12 d-flex justify-content-end">
                         <button class="btn btn-success" type="submit">Update </button>

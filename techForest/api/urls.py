@@ -17,8 +17,6 @@ urlpatterns = [
     path('valvula/<int:pk>',views.valvula_detail),
     path('opciones',views.opciones_list),
     path('opciones/<int:pk>',views.opciones_detail),
-    path('admin',views.admin_list),
-    path('admin/<int:pk>',views.admin_detail),
 
     # Jose
     path('dispositivos/<int:pk>',views.dispositivos_detail),

@@ -12,7 +12,7 @@
     </div>
 </div>
 <br>
-<form class="card" method="POST" action="/cliente/{{ cliente.id }}/reportar">
+<form class="card" method="POST" action="/cliente/{{ cliente.user_id }}/reportar">
     {% csrf_token %} 
     <div class="card-header bg-light">
         <h5 class="mb-0">Enviar error</h5>

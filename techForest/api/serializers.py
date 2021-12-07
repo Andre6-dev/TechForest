@@ -3,19 +3,31 @@ from .models import *
 
 class UsuariosSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Usuarios
-        fields = ('id', 'nombres', 'apellidos', 'correo', 'contraseña', 'imagen_perfil')
+        model = User
+        fields = ('id')
 
     def create(self, validated_data):
         """
         Create and return a new `Usuarios` instance, given the validated data.
         """
-        return Usuarios.objects.create(**validated_data)
+        return User.objects.create(**validated_data)
+
+class ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile
+        fields = ('id','user','nombres','apellidos','correo','contraseña','imagen_perfil')
+
+    def create(self, validated_data):
+        """
+        Create and return a new `Usuarios` instance, given the validated data.
+        """
+        return Profile.objects.create(**validated_data)
 
     def update(self, instance, validated_data):
         """
         Update and return an existing `Usuarios` instance, given the validated data.
         """
+        instance.user = validated_data.get('user', instance.user)
         instance.nombres = validated_data.get('nombres', instance.nombres)
         instance.apellidos = validated_data.get('apellidos', instance.apellidos)
         instance.correo = validated_data.get('correo', instance.correo)
@@ -151,28 +163,5 @@ class OpcionesSerializer(serializers.ModelSerializer):
         instance.valor_minimo = validated_data.get('valor_minimo', instance.valor_minimo)
         instance.humedad = validated_data.get('humedad', instance.humedad)
         instance.diapositivos = validated_data.get('diapositivos', instance.diapositivos)
-        instance.save()
-        return instance
-
-class AdministradoresSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Administradores
-        fields = ('id', 'nombres', 'apellidos', 'correo', 'contraseña', 'imagen_perfil')
-
-    def create(self, validated_data):
-        """
-        Create and return a new `Administradores` instance, given the validated data.
-        """
-        return Administradores.objects.create(**validated_data)
-
-    def update(self, instance, validated_data):
-        """
-        Update and return an existing `Administradores` instance, given the validated data.
-        """
-        instance.nombres = validated_data.get('nombres', instance.nombres)
-        instance.apellidos = validated_data.get('apellidos', instance.apellidos)
-        instance.correo = validated_data.get('correo', instance.correo)
-        instance.contraseña = validated_data.get('contraseña', instance.contraseña)
-        instance.imagen_perfil = validated_data.get('imagen_perfil', instance.imagen_perfil)
         instance.save()
         return instance
