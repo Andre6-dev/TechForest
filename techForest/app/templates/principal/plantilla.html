@@ -93,10 +93,17 @@
                                 aria-expanded="false" id="dashboard">Contacto</a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#!" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Ingresar</a></li>
+
+                    {% if request.user.is_authenticated %}
+                        <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="/logout"
+                                >Logout</a></li>
                     </ul>
+                    {% else %}
+                        <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="/login-usuarios" >Ingresar</a></li>
+                        </ul>
+                    {% endif %}
                 </div>
             </div>
         </nav>

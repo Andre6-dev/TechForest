@@ -73,3 +73,4 @@ class Opciones(models.Model):
     valor_minimo = models.CharField(max_length=200)
     humedad = models.CharField(max_length=200) 
     diapositivos = models.OneToOneField(Dispositivos, on_delete=models.CASCADE)
+

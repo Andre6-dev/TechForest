@@ -30,4 +30,8 @@ urlpatterns = [
     path('administrador/dispositivos', views.dispositivos, name='ayuda'),
     path('administrador/usuarios', views.usuarios, name='usuarios'),
 
+    path('login-usuarios/', views.loginUser, name='loginpage'),
+    path('logout', views.logoutUser, name='logout'),
+    path('register', views.registerUser, name='register'),
+
 ]
